@@ -5,7 +5,7 @@ import streamlit as st
 st.title("Reproductor de Audio")
 # Cargar archivo de audio
 uploaded_file = st.file_uploader("Cargar archivo de audio", type=["mp3", "wav"])
-if uploaded_file:
+#if uploaded_file:
         #st.audio(uploaded_file, format="audio/mp3")
 
         # Convertir el archivo cargado a un objeto AudioSegment
