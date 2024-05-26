@@ -20,6 +20,6 @@ if uploaded_file is not None:
        model="whisper-1", 
        file=uploaded_file
     )
-    st.writre(transcription.text)
+    st.write(transcription.text)
 
           
