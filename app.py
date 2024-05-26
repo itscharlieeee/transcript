@@ -2,6 +2,7 @@ import streamlit as st
 from tempfile import NamedTemporaryFile
 import whisper
 from openai import OpenAI
+import os
 
 
 st.title("Reproductor de Audio")
