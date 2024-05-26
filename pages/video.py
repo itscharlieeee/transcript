@@ -14,3 +14,4 @@ if video_file is not None:
         # Convert video to transcript
         #transcript = video_to_transcript(video_file)
         st.write("Cargado")
+        st.video(video_file)
