@@ -1,12 +1,14 @@
 import streamlit as st
+from io import BytesIO
 
 
 def video_to_transcript(video_file):
     # Step 1: Convert video to audio
-    audio_file = "temp_audio.wav"
-    #audio = AudioSegment.from_file(video_file, format="mp4")
-    audio.export(video_file, format="wav")
-    st.audio(audio_file, format="audio/wav")
+    buffer = BytesIO()
+    audio =video_file.streams.get_audio_only()
+    default_filename = audio.default_filename
+    audio.stream_to_buffer(buffer)
+    st.audio(buffer, format="audio/mpeg")
 
 st.title("Transcripción de Video")
 
