@@ -9,5 +9,5 @@ if audio is not None:
         temp.write(audio.getvalue())
         temp.seek(0)
         model = whisper.load_model("base")
-        result = model.transcribe(temp.name)
+        result = model.transcribe("Bienvenida.mp3")
         st.write(result["text"])
