@@ -12,8 +12,8 @@ if uploaded_file:
         audio_data = AudioSegment.from_file(uploaded_file)
 
         # Reproducir el audio
-st.subheader("Reproducir Audio")
-if st.button("Reproducir"):
-    play(audio_data)
+#st.subheader("Reproducir Audio")
+#if st.button("Reproducir"):
+#    play(audio_data)
 
           
