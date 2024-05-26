@@ -1,5 +1,6 @@
 import streamlit as st
 from tempfile import NamedTemporaryFile
+import whisper
 
 st.title("Reproductor de Audio")
 # Cargar archivo de audio
