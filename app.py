@@ -1,5 +1,6 @@
 import streamlit as st
 import whisper
+from tempfile import NamedTemporaryFile
 
 audio = st.file_uploader("Upload an audio file", type=["mp3"])
 
