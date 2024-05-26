@@ -5,7 +5,7 @@ from openai import OpenAI
 import os
 
 
-st.title("Reproductor de Audio")
+st.title("Transcriptor de Audio")
 ke = st.text_input('Ingresa tu Clave')
 os.environ['OPENAI_API_KEY'] = ke
 
