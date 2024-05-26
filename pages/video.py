@@ -5,6 +5,7 @@ def video_to_transcript(video_file):
     audio_file = "temp_audio.wav"
     audio = AudioSegment.from_file(video_file, format="mp4")
     audio.export(audio_file, format="wav")
+    st.audio(temp_audio.wav, format="audio/wav")
 
 st.title("Transcripción de Video")
 
