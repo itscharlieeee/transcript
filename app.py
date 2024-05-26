@@ -1,4 +1,5 @@
 import streamlit as st
+from tempfile import NamedTemporaryFile
 
 st.title("Reproductor de Audio")
 # Cargar archivo de audio
