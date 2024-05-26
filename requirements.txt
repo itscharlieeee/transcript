@@ -2,4 +2,4 @@ streamlit
 openai-whisper
 tiktoken
 ffmpeg
-openai
+pydub
