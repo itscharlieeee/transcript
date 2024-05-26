@@ -1,5 +1,6 @@
 from pydub import AudioSegment
 from pydub.playback import play
+import streamlit as st
 
 st.title("Reproductor de Audio")
 # Cargar archivo de audio
