@@ -9,6 +9,14 @@ if audio is not None:
     with NamedTemporaryFile(suffix="mp3") as temp:
         temp.write(audio.getvalue())
         temp.seek(0)
-        model = whisper.load_model("base")
-        result = model.transcribe("Bienvenida.mp3")
-        st.write(result["text"])
+        model = whisper.load_model("base")   
+        audio_file= open("Bienvenida.mp3", "rb")
+        transcription = client.audio.transcriptions.create(
+           model="whisper-1", 
+           file=audio_file
+        )
+
+        
+        #result = model.transcribe("Bienvenida.mp3")
+        #st.write(result["text"])
+        st.write(transcription.text)
