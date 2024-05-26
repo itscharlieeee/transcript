@@ -2,6 +2,7 @@ import streamlit as st
 import whisper
 from tempfile import NamedTemporaryFile
 import ffmpeg
+from openai import OpenAI
 client OpenAI()
 
 audio = st.file_uploader("Upload an audio file", type=["mp3"])
