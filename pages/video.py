@@ -1,10 +1,10 @@
 import streamlit as st
-from pydub import AudioSegment
+
 
 def video_to_transcript(video_file):
     # Step 1: Convert video to audio
     audio_file = "temp_audio.wav"
-    audio = AudioSegment.from_file(video_file, format="mp4")
+    #audio = AudioSegment.from_file(video_file, format="mp4")
     audio.export(audio_file, format="wav")
     st.audio(audio_file, format="audio/wav")
 
