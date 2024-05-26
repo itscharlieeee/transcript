@@ -18,7 +18,7 @@ if uploaded_file is not None:
     transcription = client.audio.transcriptions.create(
        model="whisper-1", 
        file=uploaded_file
-     )
-     st.writre(transcription.text)
+    )
+    st.writre(transcription.text)
 
           
