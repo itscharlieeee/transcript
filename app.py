@@ -1,24 +1,18 @@
-import streamlit as st
-import whisper
-from tempfile import NamedTemporaryFile
-import ffmpeg
-from openai import OpenAI
-client = OpenAI()
+from pydub import AudioSegment
+from pydub.playback import play
 
-audio = st.file_uploader("Upload an audio file", type=["mp3"])
+st.title("Reproductor de Audio")
+# Cargar archivo de audio
+uploaded_file = st.file_uploader("Cargar archivo de audio", type=["mp3", "wav"])
+if uploaded_file:
+        st.audio(uploaded_file, format="audio/mp3")
 
-if audio is not None:
-    with NamedTemporaryFile(suffix="mp3") as temp:
-        temp.write(audio.getvalue())
-        temp.seek(0)
-        model = whisper.load_model("base")   
-        audio_file= open("Bienvenida.mp3", "rb")
-        transcription = client.audio.transcriptions.create(
-           model="whisper-1", 
-           file=audio_file
-        )
+        # Convertir el archivo cargado a un objeto AudioSegment
+        audio_data = AudioSegment.from_file(uploaded_file)
 
-        
-        #result = model.transcribe("Bienvenida.mp3")
-        #st.write(result["text"])
-        st.write(transcription.text)
+        # Reproducir el audio
+st.subheader("Reproducir Audio")
+if st.button("Reproducir"):
+    play(audio_data)
+
+          
