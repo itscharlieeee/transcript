@@ -3,3 +3,4 @@ openai-whisper
 tiktoken
 ffmpeg
 pydub
+openai
