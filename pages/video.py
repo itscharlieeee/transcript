@@ -5,7 +5,7 @@ from io import BytesIO
 def video_to_transcript(video_file):
     # Step 1: Convert video to audio
     buffer = BytesIO()
-    audio =video_file.streams.get_audio_only()
+    audio =video_file.get_audio_only()
     default_filename = audio.default_filename
     audio.stream_to_buffer(buffer)
     st.audio(buffer, format="audio/mpeg")
