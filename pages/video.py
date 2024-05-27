@@ -6,7 +6,7 @@ import os
 
 mp3_file = "audio.mp3"
 def video_to_transcript(video_file):
-     client = OpenAI(api_key=ke)   
+    client = OpenAI(api_key=ke)   
     # Step 1: Convert video to audio
     video_clip = VideoFileClip("myarchivo.mp4")
     audio_clip = video_clip.audio
