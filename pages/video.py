@@ -1,5 +1,6 @@
 import streamlit as st
 from io import BytesIO
+from moviepy.editor import VideoFileClip
 
 
 def video_to_transcript(video_file):
