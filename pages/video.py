@@ -28,6 +28,6 @@ if video_file is not None:
         st.write("Cargado")
         st.video(video_file)
     
-st.button("Transcribir", type="primary")
-if st.button("Say hello"):
+if st.button("Transcribir", type="primary"):
     video_to_transcript(video_file)
+    st.audio(audio.mp3, format="audio/mp3")
