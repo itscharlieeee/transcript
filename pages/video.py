@@ -26,7 +26,7 @@ video_file = st.file_uploader("Upload a video file", type=["mp4", "avi", "mkv"])
 if video_file is not None:
         file_path = "myarchivo.mp4"
         with open(file_path, "wb") as f:
-            f.write(uploaded_file.read())
+            f.write(video_file.read())
         st.write("Cargado")
         st.video(video_file)
     
