@@ -9,7 +9,7 @@ def video_to_transcript(video_file):
     audio_clip = video_clip.audio
     # Write the audio to a separate file
     audio_clip.write_audiofile(mp3_file) 
-    st.audio(audio.mp3, format="audio/mp3")
+    st.audio("audio.mp3", format="audio/mp3")
     # Close the video and audio clips
     audio_clip.close()
     
