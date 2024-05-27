@@ -27,7 +27,11 @@ def video_to_transcript(video_file):
 
 st.title("Transcripción de Video")
 
-st.write("Upload a video file and convert it to a transcript.")
+ke = st.text_input('Ingresa tu Clave')
+os.environ['OPENAI_API_KEY'] = ke
+
+st.write("Carga el video que quieres transcribir.")
+
 video_file = st.file_uploader("Upload a video file", type=["mp4", "avi", "mkv"])
 if video_file is not None:
         file_path = "myarchivo.mp4"
