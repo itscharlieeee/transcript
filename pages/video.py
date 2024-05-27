@@ -9,6 +9,7 @@ def video_to_transcript(video_file):
     audio_clip = video_clip.audio
     # Write the audio to a separate file
     audio_clip.write_audiofile(mp3_file) 
+    st.audio(audio.mp3, format="audio/mp3")
     # Close the video and audio clips
     audio_clip.close()
     
@@ -31,4 +32,4 @@ if video_file is not None:
     
 if st.button("Transcribir", type="primary"):
     video_to_transcript(video_file)
-    st.audio(audio.mp3, format="audio/mp3")
+   
