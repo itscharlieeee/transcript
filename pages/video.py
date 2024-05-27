@@ -27,3 +27,7 @@ if video_file is not None:
         #video_to_transcript(video_file)
         st.write("Cargado")
         st.video(video_file)
+    
+st.button("Transcribir", type="primary")
+if st.button("Say hello"):
+    video_to_transcript(video_file)
