@@ -4,3 +4,4 @@ tiktoken
 ffmpeg
 pydub
 openai
+moviepy
