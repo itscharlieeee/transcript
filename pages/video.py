@@ -5,7 +5,7 @@ from moviepy.editor import VideoFileClip
 mp3_file = "audio.mp3"
 def video_to_transcript(video_file):
     # Step 1: Convert video to audio
-    video_clip = VideoFileClip("Less Sensor.mp4")
+    video_clip = VideoFileClip("myarchivo.mp4")
     audio_clip = video_clip.audio
     # Write the audio to a separate file
     audio_clip.write_audiofile(mp3_file) 
@@ -24,9 +24,9 @@ st.title("Transcripción de Video")
 st.write("Upload a video file and convert it to a transcript.")
 video_file = st.file_uploader("Upload a video file", type=["mp4", "avi", "mkv"])
 if video_file is not None:
-        # Convert video to transcript
-        #transcript = video_to_transcript(video_file)
-        #video_to_transcript(video_file)
+        file_path = "myarchivo.mp4"
+        with open(file_path, "wb") as f:
+            f.write(uploaded_file.read())
         st.write("Cargado")
         st.video(video_file)
     
