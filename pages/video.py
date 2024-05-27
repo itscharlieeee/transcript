@@ -16,7 +16,7 @@ def video_to_transcript(video_file):
     #client = OpenAI(api_key=ke)    
     transcription = client.audio.transcriptions.create(
        model="whisper-1", 
-       file="audio.mp3"
+       file= audio_clip
     )
     st.write(transcription.text)
     # Close the video and audio clips
