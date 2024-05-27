@@ -1,6 +1,7 @@
 import streamlit as st
 from io import BytesIO
 from moviepy.editor import VideoFileClip
+from openai import OpenAI
 import os
 
 mp3_file = "audio.mp3"
