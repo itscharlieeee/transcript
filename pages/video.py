@@ -3,7 +3,7 @@ from io import BytesIO
 from moviepy.editor import VideoFileClip
 
 mp3_file = "audio.mp3"
-def video_to_transcript(video_file):
+def video_to_transcript(Less_sensor.mp4):
     # Step 1: Convert video to audio
     video_clip = VideoFileClip(video_file)
     audio_clip = video_clip.audio
