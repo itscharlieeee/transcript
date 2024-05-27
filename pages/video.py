@@ -1,6 +1,7 @@
 import streamlit as st
 from io import BytesIO
 from moviepy.editor import VideoFileClip
+import os
 
 mp3_file = "audio.mp3"
 def video_to_transcript(video_file):
