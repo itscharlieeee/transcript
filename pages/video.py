@@ -5,7 +5,8 @@ from moviepy.editor import VideoFileClip
 mp3_file = "audio.mp3"
 def video_to_transcript(video_file):
     # Step 1: Convert video to audio
-    audio_clip = video_file.audio
+    video_clip = VideoFileClip((video_file)
+    audio_clip = video_clip.audio
     # Write the audio to a separate file
     audio_clip.write_audiofile(mp3_file)
     # Close the video and audio clips
