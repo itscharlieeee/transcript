@@ -16,7 +16,7 @@ def video_to_transcript(video_file):
     #   model="whisper-1", 
     #   file=audio_clip
     #)
-    st.write(transcription.text)
+    #st.write(transcription.text)
     # Close the video and audio clips
     audio_clip.close()
     
