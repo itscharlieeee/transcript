@@ -3,6 +3,8 @@ from io import BytesIO
 from moviepy.editor import VideoFileClip
 from openai import OpenAI
 import os
+from googletrans import Translator
+
 
 mp3_file = "audio.mp3"
 def video_to_transcript(video_file):
@@ -67,7 +69,34 @@ def video_to_transcript(video_file):
             "Sudáfrica",
         ),
     )
-  
+
+    def text_to_speech(input_language, output_language, text, tld):
+        translation = translator.translate(text, src=input_language, dest=output_language)
+        trans_text = translation.text
+        tts = gTTS(trans_text, lang=output_language, tld=tld, slow=False)
+        try:
+            my_file_name = text[0:20]
+        except:
+            my_file_name = "audio"
+        tts.save(f"temp/{my_file_name}.mp3")
+        return my_file_name, trans_text
+    
+    
+    display_output_text = st.checkbox("Mostrar el texto")
+    
+    if st.button("convertir"):
+        result, output_text = text_to_speech(input_language, output_language, text, tld)
+        audio_file = open(f"temp/{result}.mp3", "rb")
+        audio_bytes = audio_file.read()
+        st.markdown(f"## Tú audio:")
+        st.audio(audio_bytes, format="audio/mp3", start_time=0)
+    
+        if display_output_text:
+            st.markdown(f"## Texto de salida:")
+            st.write(f" {output_text}")
+
+
+    
     # Close the video and audio clips
     audio_clip.close()
     
