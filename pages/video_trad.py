@@ -9,7 +9,7 @@ from openai import openai
 
 
 mp3_file = "audio.mp3"
-translator = Translator()
+#translator = Translator()
 
 def text_to_speech(input_language, output_language, text, tld):
         translation = translator.translate(text, src=input_language, dest=output_language)
