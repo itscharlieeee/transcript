@@ -1,4 +1,5 @@
 streamlit
+openai
 #openai-whisper
 googletrans==4.0.0-rc1
 gTTS==2.2.2
@@ -6,5 +7,5 @@ tiktoken
 ffmpeg
 pydub
 moviepy
-openai
+
 
