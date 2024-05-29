@@ -2,8 +2,6 @@ googletrans
 streamlit
 openai-whisper
 openai
-#gTTS==2.2.2
-#googletrans
 tiktoken
 ffmpeg
 pydub
