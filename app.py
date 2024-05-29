@@ -3,6 +3,7 @@ from tempfile import NamedTemporaryFile
 #import whisper
 from openai import OpenAI
 import os
+import whisper
 
 
 st.title("Transcriptor de Audio")
