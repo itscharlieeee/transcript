@@ -7,5 +7,6 @@ tiktoken
 ffmpeg
 pydub
 moviepy
+openai
 
 
