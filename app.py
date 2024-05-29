@@ -1,6 +1,6 @@
 import streamlit as st
 from tempfile import NamedTemporaryFile
-import whisper
+#import whisper
 from openai import OpenAI
 import os
 
