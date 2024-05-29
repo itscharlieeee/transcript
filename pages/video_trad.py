@@ -3,7 +3,7 @@ from io import BytesIO
 from moviepy.editor import VideoFileClip
 from openai import OpenAI
 import os
-#from googletrans import Translator
+from googletrans import Translator
 from openai import openai
 #from gtts import gTTS
 
