@@ -5,6 +5,7 @@ from openai import OpenAI
 import os
 from googletrans import Translator
 from openai import openai
+from gtts import gTTS
 
 
 mp3_file = "audio.mp3"
