@@ -21,56 +21,57 @@ def video_to_transcript(video_file):
     transcription = client.audio.transcriptions.create(
        model="whisper-1", 
        file= audio_file
-    )
-    translator = Translator()
-    st.write(transcription.text)
-    in_lang = st.selectbox(
-        "Selecciona el lenguaje de Entrada",
-        ("Inglés", "Español", "Bengali", "Coreano", "Mandarín", "Japonés"),
-    )
-    if in_lang == "Inglés":
-        input_language = "en"
-    elif in_lang == "Español":
-        input_language = "es"
-    elif in_lang == "Bengali":
-        input_language = "bn"
-    elif in_lang == "Coreano":
-        input_language = "ko"
-    elif in_lang == "Mandarín":
-        input_language = "zh-cn"
-    elif in_lang == "Japonés":
-        input_language = "ja"
-      
-    out_lang = st.selectbox(
-        "Selecciona el lenguaje de salida",
-        ("Inglés", "Español", "Bengali", "Coreano", "Mandarín", "Japonés"),
-    )
-    if out_lang == "Inglés":
-        output_language = "en"
-    elif out_lang == "Español":
-        output_language = "es"
-    elif out_lang == "Bengali":
-        output_language = "bn"
-    elif out_lang == "Coreano":
-        output_language = "ko"
-    elif out_lang == "Mandarín":
-        output_language = "zh-cn"
-    elif out_lang == "Japonés":  
-        output_language = "ja"
-
-    english_accent = st.selectbox(
-        "Selecciona el acento",
-        (
-            "Defecto",
-            "Español",
-            "Reino Unido",
-            "Estados Unidos",
-            "Canada",
-            "Australia",
-            "Irlanda",
-            "Sudáfrica",
-        ),
-    )
+    ) 
+    if transcription.tex:
+            translator = Translator()
+            st.write(transcription.text)
+            in_lang = st.selectbox(
+                "Selecciona el lenguaje de Entrada",
+                ("Inglés", "Español", "Bengali", "Coreano", "Mandarín", "Japonés"),
+            )
+            if in_lang == "Inglés":
+                input_language = "en"
+            elif in_lang == "Español":
+                input_language = "es"
+            elif in_lang == "Bengali":
+                input_language = "bn"
+            elif in_lang == "Coreano":
+                input_language = "ko"
+            elif in_lang == "Mandarín":
+                input_language = "zh-cn"
+            elif in_lang == "Japonés":
+                input_language = "ja"
+              
+            out_lang = st.selectbox(
+                "Selecciona el lenguaje de salida",
+                ("Inglés", "Español", "Bengali", "Coreano", "Mandarín", "Japonés"),
+            )
+            if out_lang == "Inglés":
+                output_language = "en"
+            elif out_lang == "Español":
+                output_language = "es"
+            elif out_lang == "Bengali":
+                output_language = "bn"
+            elif out_lang == "Coreano":
+                output_language = "ko"
+            elif out_lang == "Mandarín":
+                output_language = "zh-cn"
+            elif out_lang == "Japonés":  
+                output_language = "ja"
+        
+            english_accent = st.selectbox(
+                "Selecciona el acento",
+                (
+                    "Defecto",
+                    "Español",
+                    "Reino Unido",
+                    "Estados Unidos",
+                    "Canada",
+                    "Australia",
+                    "Irlanda",
+                    "Sudáfrica",
+                ),
+            )
 
     def text_to_speech(input_language, output_language, text, tld):
         translation = translator.translate(text, src=input_language, dest=output_language)
