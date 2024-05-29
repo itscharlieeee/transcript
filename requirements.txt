@@ -1,3 +1,4 @@
+googletrans
 streamlit
 openai-whisper
 openai
