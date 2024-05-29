@@ -8,6 +8,20 @@ from openai import openai
 
 
 mp3_file = "audio.mp3"
+
+def text_to_speech(input_language, output_language, text, tld):
+        translation = translator.translate(text, src=input_language, dest=output_language)
+        trans_text = translation.text
+        tts = gTTS(trans_text, lang=output_language, tld=tld, slow=False)
+        try:
+            my_file_name = text[0:20]
+        except:
+            my_file_name = "audio"
+        tts.save(f"temp/{my_file_name}.mp3")
+        return my_file_name, trans_text
+
+
+
 def video_to_transcript(video_file):
     client = OpenAI(api_key=ke)   
     # Step 1: Convert video to audio
@@ -23,67 +37,57 @@ def video_to_transcript(video_file):
        file= audio_file
     ) 
     st.write(transcription.text)
-    if transcription:
-            translator = Translator()
+   
             
-            in_lang = st.selectbox(
-                "Selecciona el lenguaje de Entrada",
-                ("Inglés", "Español", "Bengali", "Coreano", "Mandarín", "Japonés"),
-            )
-            if in_lang == "Inglés":
-                input_language = "en"
-            elif in_lang == "Español":
-                input_language = "es"
-            elif in_lang == "Bengali":
-                input_language = "bn"
-            elif in_lang == "Coreano":
-                input_language = "ko"
-            elif in_lang == "Mandarín":
-                input_language = "zh-cn"
-            elif in_lang == "Japonés":
-                input_language = "ja"
-              
-            out_lang = st.selectbox(
-                "Selecciona el lenguaje de salida",
-                ("Inglés", "Español", "Bengali", "Coreano", "Mandarín", "Japonés"),
-            )
-            if out_lang == "Inglés":
-                output_language = "en"
-            elif out_lang == "Español":
-                output_language = "es"
-            elif out_lang == "Bengali":
-                output_language = "bn"
-            elif out_lang == "Coreano":
-                output_language = "ko"
-            elif out_lang == "Mandarín":
-                output_language = "zh-cn"
-            elif out_lang == "Japonés":  
-                output_language = "ja"
-        
-            english_accent = st.selectbox(
-                "Selecciona el acento",
-                (
-                    "Defecto",
-                    "Español",
-                    "Reino Unido",
-                    "Estados Unidos",
-                    "Canada",
-                    "Australia",
-                    "Irlanda",
-                    "Sudáfrica",
-                ),
-            )
+    in_lang = st.selectbox(
+        "Selecciona el lenguaje de Entrada",
+        ("Inglés", "Español", "Bengali", "Coreano", "Mandarín", "Japonés"),
+    )
+    if in_lang == "Inglés":
+        input_language = "en"
+    elif in_lang == "Español":
+        input_language = "es"
+    elif in_lang == "Bengali":
+        input_language = "bn"
+    elif in_lang == "Coreano":
+        input_language = "ko"
+    elif in_lang == "Mandarín":
+        input_language = "zh-cn"
+    elif in_lang == "Japonés":
+        input_language = "ja"
+      
+    out_lang = st.selectbox(
+        "Selecciona el lenguaje de salida",
+        ("Inglés", "Español", "Bengali", "Coreano", "Mandarín", "Japonés"),
+    )
+    if out_lang == "Inglés":
+        output_language = "en"
+    elif out_lang == "Español":
+        output_language = "es"
+    elif out_lang == "Bengali":
+        output_language = "bn"
+    elif out_lang == "Coreano":
+        output_language = "ko"
+    elif out_lang == "Mandarín":
+        output_language = "zh-cn"
+    elif out_lang == "Japonés":  
+        output_language = "ja"
 
-    def text_to_speech(input_language, output_language, text, tld):
-        translation = translator.translate(text, src=input_language, dest=output_language)
-        trans_text = translation.text
-        tts = gTTS(trans_text, lang=output_language, tld=tld, slow=False)
-        try:
-            my_file_name = text[0:20]
-        except:
-            my_file_name = "audio"
-        tts.save(f"temp/{my_file_name}.mp3")
-        return my_file_name, trans_text
+    english_accent = st.selectbox(
+        "Selecciona el acento",
+        (
+            "Defecto",
+            "Español",
+            "Reino Unido",
+            "Estados Unidos",
+            "Canada",
+            "Australia",
+            "Irlanda",
+            "Sudáfrica",
+        ),
+    )
+
+
     
     
     display_output_text = st.checkbox("Mostrar el texto")
