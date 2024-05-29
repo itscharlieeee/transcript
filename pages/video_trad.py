@@ -93,6 +93,7 @@ def video_to_transcript(video_file):
     
     
     display_output_text = st.checkbox("Mostrar el texto")
+        
     
     if st.button("convertir"):
         result, output_text = text_to_speech(input_language, output_language, text, tld)
@@ -114,6 +115,12 @@ def video_to_transcript(video_file):
 
 st.title("Transcripción de Video")
 
+translator = Translator()
+text = "Hola, ¿cómo estás?"
+
+translation = translator.translate(text, dest="en")
+st.write(translation)
+print(f"Traducción al inglés: {translation.text}")
 ke = st.text_input('Ingresa tu Clave')
 os.environ['OPENAI_API_KEY'] = ke
 
