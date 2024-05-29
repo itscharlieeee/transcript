@@ -115,7 +115,7 @@ def video_to_transcript(video_file):
 
 st.title("Transcripción de Video")
 
-translator = Translator()
+#translator = Translator()
 text = "Hola, ¿cómo estás?"
 
 translation = translator.translate(text, dest="en")
