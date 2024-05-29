@@ -3,6 +3,6 @@ openai-whisper
 tiktoken
 ffmpeg
 pydub
-openai
 moviepy
+openai
 
