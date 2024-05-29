@@ -4,7 +4,7 @@ from moviepy.editor import VideoFileClip
 from openai import OpenAI
 import os
 from googletrans import Translator
-import openai
+from openai import openai
 
 
 mp3_file = "audio.mp3"
