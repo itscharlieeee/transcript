@@ -120,7 +120,7 @@ st.title("Transcripción de Video")
 
 #translation = translator.translate(text, dest="en")
 #st.write(translation)
-print(f"Traducción al inglés: {translation.text}")
+#print(f"Traducción al inglés: {translation.text}")
 ke = st.text_input('Ingresa tu Clave')
 os.environ['OPENAI_API_KEY'] = ke
 
