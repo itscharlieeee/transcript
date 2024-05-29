@@ -22,9 +22,10 @@ def video_to_transcript(video_file):
        model="whisper-1", 
        file= audio_file
     ) 
-    if transcription.tex:
+    st.write(transcription.text)
+    if transcription:
             translator = Translator()
-            st.write(transcription.text)
+            
             in_lang = st.selectbox(
                 "Selecciona el lenguaje de Entrada",
                 ("Inglés", "Español", "Bengali", "Coreano", "Mandarín", "Japonés"),
