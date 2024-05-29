@@ -3,7 +3,7 @@ openai-whisper
 tiktoken
 ffmpeg
 pydub
-googletrans==3.1.0a0
+googletrans
 moviepy
 openai
 
