@@ -3,6 +3,7 @@ from io import BytesIO
 from moviepy.editor import VideoFileClip
 from openai import OpenAI
 import os
+import whisper
 
 mp3_file = "audio.mp3"
 def video_to_transcript(video_file):
