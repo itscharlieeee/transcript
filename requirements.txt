@@ -3,7 +3,7 @@ streamlit
 openai-whisper
 openai
 #gTTS==2.2.2
-#googletrans==3.1.0a0
+googletrans==3.1.0a0
 tiktoken
 ffmpeg
 pydub
