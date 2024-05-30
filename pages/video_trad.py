@@ -11,6 +11,11 @@ from translate import Translator
 mp3_file = "audio.mp3"
 #translator = Translator()
 
+if 't_txt' not in st.session_state:
+	st.session_state.txt = " "
+
+
+
 #def text_to_speech(input_language, output_language, text, tld):
 #        translation = translator.translate(text, src=input_language, dest=output_language)
 #       trans_text = translation.text
@@ -39,6 +44,7 @@ def video_to_transcript(video_file):
        file= audio_file
     ) 
     st.write(transcription.text)
+    st.session_state.txt=transcription.text
    
             
     in_lang = st.selectbox(
