@@ -12,7 +12,7 @@ mp3_file = "audio.mp3"
 #translator = Translator()
 
 if 't_txt' not in st.session_state:
-	st.session_state.t_txt = " "
+    st.session_state.t_txt = " "
 
 
 
@@ -133,7 +133,7 @@ if st.button("convertir"):
         #st.audio(audio_bytes, format="audio/mp3", start_time=0)
         translator = Translator(to_lang="es")
         translation = translator.translate(st.session_state.txt)
-	st.write(st.session_state.t_txt)
+	#st.write(st.session_state.t_txt)
         st.write(translation)
     
         if display_output_text:
