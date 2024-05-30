@@ -119,13 +119,14 @@ if st.button("Transcribir", type="primary"):
    
 display_output_text = st.checkbox("Mostrar el texto")
 if st.button("convertir"):
+        
         #result, output_text = text_to_speech(input_language, output_language, text, tld)
         #audio_file = open(f"temp/{result}.mp3", "rb")
         #audio_bytes = audio_file.read()
         #st.markdown(f"## Tú audio:")
         #st.audio(audio_bytes, format="audio/mp3", start_time=0)
         translator = Translator(to_lang="es")
-        translation = translator.translate("Hello, world this is an good example!")
+        translation = translator.translate(transcription.text)
         st.write(translation)
     
         if display_output_text:
