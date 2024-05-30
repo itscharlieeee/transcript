@@ -12,7 +12,7 @@ mp3_file = "audio.mp3"
 #translator = Translator()
 
 if 't_txt' not in st.session_state:
-	st.session_state.txt = " "
+	st.session_state.t_txt = " "
 
 
 
@@ -44,7 +44,7 @@ def video_to_transcript(video_file):
        file= audio_file
     ) 
     st.write(transcription.text)
-    st.session_state.txt=transcription.text
+    st.session_state.t_txt=transcription.text
    
             
     in_lang = st.selectbox(
@@ -133,6 +133,7 @@ if st.button("convertir"):
         #st.audio(audio_bytes, format="audio/mp3", start_time=0)
         translator = Translator(to_lang="es")
         translation = translator.translate(st.session_state.txt)
+	st.write(st.session_state.t_txt)
         st.write(translation)
     
         if display_output_text:
