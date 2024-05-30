@@ -132,7 +132,7 @@ if st.button("convertir"):
         #st.markdown(f"## Tú audio:")
         #st.audio(audio_bytes, format="audio/mp3", start_time=0)
         translator = Translator(to_lang="es")
-        translation = translator.translate(st.session_state.txt)
+        translation = translator.translate(st.session_state.t_txt)
 	#st.write(st.session_state.t_txt)
         st.write(translation)
     
