@@ -135,5 +135,5 @@ if st.button("convertir"):
 
     
     # Close the video and audio clips
-        audio_clip.close()
+    #    audio_clip.close()
     
