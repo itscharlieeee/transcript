@@ -134,7 +134,19 @@ if st.button("convertir"):
         #st.audio(audio_bytes, format="audio/mp3", start_time=0)
      translator = Translator(to_lang="es")
      input_text= st.session_state.t_txt
-     sections = [input_text[i:i+40] for i in range(0, len(input_text), 40)]
+     max_section_length = 40
+     sections = []
+     ######sections = [input_text[i:i+40] for i in range(0, len(input_text), 40)]
+     while input_text:
+            if len(input_text) <= max_section_length:
+                sections.append(input_text)
+                break
+            last_space_index = input_text[:max_section_length].rfind(" ")
+            if last_space_index == -1:
+                last_space_index = max_section_length
+            sections.append(input_text[:last_space_index])
+            input_text = input_text[last_space_index:].strip()
+
      translated_sections = []
      for section in sections:
             translated_text = translator.translate(section)
