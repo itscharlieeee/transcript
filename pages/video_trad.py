@@ -136,7 +136,7 @@ if st.button("convertir"):
      sections = [input_text[i:i+40] for i in range(0, len(input_text), 40)]
      translated_sections = []
      for section in sections:
-            translated_text = translator.translate(section).text
+            translated_text = translator.translate(section)
             translated_sections.append(translated_text)
             time.sleep(0.5)  # Retardo de medio segundo
 
