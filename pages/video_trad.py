@@ -131,7 +131,7 @@ if st.button("convertir"):
         #audio_bytes = audio_file.read()
         #st.markdown(f"## Tú audio:")
         #st.audio(audio_bytes, format="audio/mp3", start_time=0)
-     blob = TextBlob(st.session_state.t_txt)
+     blob = TextBlob("Hello my friend")
     
      translation = blob.translate(from_lang='en', to='es')
      st.write(translation)	
