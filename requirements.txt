@@ -5,7 +5,7 @@ tiktoken
 ffmpeg
 pydub
 moviepy
-libretranslatepy
+translate
 
 
 
