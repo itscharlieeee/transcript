@@ -7,6 +7,7 @@ import os
 #from openai import openai
 #from gtts import gTTS
 from translate import Translator
+import time
 
 mp3_file = "audio.mp3"
 #translator = Translator()
