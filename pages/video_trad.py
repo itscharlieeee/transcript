@@ -135,7 +135,7 @@ if st.button("convertir"):
      input_text= st.session_state.t_txt
      sections = [input_text[i:i+40] for i in range(0, len(input_text), 40)]
      # Traducir cada sección
-     translator = Translator()
+     #translator = Translator()
      translated_sections = [translator.translate(section).text for section in sections]
      # Concatenar las secciones traducidas
      final_text = " ".join(translated_sections)
