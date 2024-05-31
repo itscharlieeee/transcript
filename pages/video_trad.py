@@ -132,8 +132,18 @@ if st.button("convertir"):
         #st.markdown(f"## Tú audio:")
         #st.audio(audio_bytes, format="audio/mp3", start_time=0)
      translator = Translator(to_lang="es")
-     translation = translator.translate(st.session_state.t_txt)
-     st.write(translation)	
+     input_text= st.session_state.t_txt
+     sections = [input_text[i:i+40] for i in range(0, len(input_text), 40)]
+     # Traducir cada sección
+     translator = Translator()
+     translated_sections = [translator.translate(section).text for section in sections]
+     # Concatenar las secciones traducidas
+     final_text = " ".join(translated_sections)
+     st.subheader("Texto Traducido:")
+     st.write(final_text)
+
+     #translation = translator.translate(st.session_state.t_txt)
+     #st.write(translation)	
      
      if display_output_text:
             st.markdown(f"## Texto de salida:")
