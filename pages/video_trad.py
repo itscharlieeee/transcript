@@ -6,7 +6,7 @@ import os
 #from googletrans import Translator
 #from openai import openai
 #from gtts import gTTS
-from translate import Translator
+from textblob import TextBlob
 
 mp3_file = "audio.mp3"
 #translator = Translator()
@@ -131,8 +131,8 @@ if st.button("convertir"):
         #audio_bytes = audio_file.read()
         #st.markdown(f"## Tú audio:")
         #st.audio(audio_bytes, format="audio/mp3", start_time=0)
-     translator = Translator(to_lang="es")
-     translation = translator.translate(st.session_state.t_txt)
+     blob = TextBlob(st.session_state.t_txt)
+     translation = blob.translate(to="es")
      st.write(translation)	
      
      if display_output_text:
