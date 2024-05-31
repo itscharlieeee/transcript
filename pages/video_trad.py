@@ -6,7 +6,7 @@ import os
 #from googletrans import Translator
 #from openai import openai
 #from gtts import gTTS
-from libretranslatepy import LibreTranslateAPI
+from translate import Translator
 
 mp3_file = "audio.mp3"
 #translator = Translator()
@@ -131,9 +131,9 @@ if st.button("convertir"):
         #audio_bytes = audio_file.read()
         #st.markdown(f"## Tú audio:")
         #st.audio(audio_bytes, format="audio/mp3", start_time=0)
-     lt = LibreTranslateAPI("https://translate.astian.org/")
-     translation = lt.translate(st.session_state.t_txt, "en", "es")
-     print(translation)	
+     translator = Translator(to_lang="es")
+     translation = translator.translate(st.session_state.t_txt)
+     st.write(translation)	
      
      if display_output_text:
             st.markdown(f"## Texto de salida:")
