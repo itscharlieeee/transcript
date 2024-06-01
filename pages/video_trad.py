@@ -15,8 +15,6 @@ mp3_file = "audio.mp3"
 if 't_txt' not in st.session_state:
     st.session_state.t_txt = " "
 
-
-
 #def text_to_speech(input_language, output_language, text, tld):
 #        translation = translator.translate(text, src=input_language, dest=output_language)
 #       trans_text = translation.text
@@ -102,12 +100,6 @@ def video_to_transcript(video_file):
 
 st.title("Transcripción de Video")
 
-#translator = Translator()
-#text = "Hola, ¿cómo estás?"
-
-#translation = translator.translate(text, dest="en")
-#st.write(translation)
-#print(f"Traducción al inglés: {translation.text}")
 ke = st.text_input('Ingresa tu Clave')
 os.environ['OPENAI_API_KEY'] = ke
 
@@ -195,7 +187,7 @@ if st.button("Traducir con IA",key=3):
        )
 
     # Obtiene la traducción del resultado
-       texto_traducido = response
+       texto_traducido = response.choices[0].message.content
 
     # Muestra el texto traducido
        st.subheader("Texto traducido:")
