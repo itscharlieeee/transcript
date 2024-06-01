@@ -185,13 +185,17 @@ if st.button("Traducir con IA",key=3):
          max_tokens=300,
          top_p=1
        )
-
-    # Obtiene la traducción del resultado
        texto_traducido = response.choices[0].message.content
-
-    # Muestra el texto traducido
        st.subheader("Texto traducido:")
        st.write(texto_traducido)
-    # Close the video and audio clips
-    #    audio_clip.close()
+       if st.button("Audio traducido",key=4):
+          client = OpenAI()
+          speech_file_path = Path(__file__).parent / "speech.mp3"
+          response = client.audio.speech.create(
+            model="tts-1",
+            voice="alloy",
+            input="Today is a wonderful day to build something people love!"
+          )
+    
+    
     
