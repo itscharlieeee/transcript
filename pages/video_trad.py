@@ -178,7 +178,7 @@ if st.button("Traducir con IA",key=3):
      # Llama a la API de OpenAI para traducir el texto
        client = OpenAI(api_key=ke)  
        response = client.chat.completions.create(
-         model="gpt-4",
+         model="gpt-4o",
          messages=[
            {
              "role": "system",
@@ -195,7 +195,7 @@ if st.button("Traducir con IA",key=3):
        )
 
     # Obtiene la traducción del resultado
-       texto_traducido = response.choices[0].text.strip()
+       texto_traducido = response
 
     # Muestra el texto traducido
        st.subheader("Texto traducido:")
