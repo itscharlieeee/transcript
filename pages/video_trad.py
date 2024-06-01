@@ -17,6 +17,9 @@ mp3_file = "audio.mp3"
 if 't_txt' not in st.session_state:
     st.session_state.t_txt = " "
 
+if 'txt_tr' not in st.session_state:
+    st.session_state.txtr_tr = " "
+
 #def text_to_speech(input_language, output_language, text, tld):
 #        translation = translator.translate(text, src=input_language, dest=output_language)
 #       trans_text = translation.text
@@ -188,6 +191,7 @@ if st.button("Traducir con IA",key=3):
          top_p=1
        )
        texto_traducido = response.choices[0].message.content
+       st.session_state.txtr_tr=texto_traducido
        st.subheader("Texto traducido:")
        st.write(texto_traducido)
        if st.button("Audio traducido",key=4):
