@@ -20,18 +20,6 @@ if 't_txt' not in st.session_state:
 if 'txt_tr' not in st.session_state:
     st.session_state.txt_tr = " "
 
-#def text_to_speech(input_language, output_language, text, tld):
-#        translation = translator.translate(text, src=input_language, dest=output_language)
-#       trans_text = translation.text
-#       #tts = gTTS(trans_text, lang=output_language, tld=tld, slow=False)
-#        try:
-#            my_file_name = text[0:20]
-#        except:
-#            my_file_name = "audio"
-#        #tts.save(f"temp/{my_file_name}.mp3")
-#        return my_file_name, trans_text
-
-
 
 def video_to_transcript(video_file):
     client = OpenAI(api_key=ke)   
@@ -99,10 +87,6 @@ def video_to_transcript(video_file):
         ),
     )
 
-
-    
-
-
 st.title("Transcripción de Video")
 
 ke = st.text_input('Ingresa tu Clave')
@@ -124,17 +108,12 @@ if st.button("Transcribir", type="primary"):
 display_output_text = st.checkbox("Mostrar el texto")
 
 if st.button("convertir con traductor"):
-        
-        #result, output_text = text_to_speech(input_language, output_language, text, tld)
-        #audio_file = open(f"temp/{result}.mp3", "rb")
-        #audio_bytes = audio_file.read()
-        #st.markdown(f"## Tú audio:")
-        #st.audio(audio_bytes, format="audio/mp3", start_time=0)
+
      translator = Translator(to_lang="es")
      input_text= st.session_state.t_txt
      max_section_length = 40
      sections = []
-     ######sections = [input_text[i:i+40] for i in range(0, len(input_text), 40)]
+    
      while input_text:
             if len(input_text) <= max_section_length:
                 sections.append(input_text)
@@ -156,23 +135,16 @@ if st.button("convertir con traductor"):
 
      st.subheader("Texto Traducido:")
      st.write(final_text)
-     # Concatenar las secciones traducidas
      final_text = " ".join(translated_sections)
      st.subheader("Texto Traducido:")
-     st.write(final_text)
-
-     #translation = translator.translate(st.session_state.t_txt)
-     #st.write(translation)	
-     
+     st.write(final_text)     
      if display_output_text:
             st.markdown(f"## Texto de salida:")
             st.write(f" {output_text}")
 
-
 if st.button("Traducir con IA",key=3):
-       in_lang= "en"   
-       out_lang="es"
-     # Llama a la API de OpenAI para traducir el texto
+       in_lang= "English"   
+       out_lang="Spanish"
        client = OpenAI(api_key=ke)  
        response = client.chat.completions.create(
          model="gpt-4o",
