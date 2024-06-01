@@ -172,7 +172,7 @@ if st.button("convertir con traductor"):
 if st.button("Traducir con IA",key=3):
         
      in_lang= "en"   
-     out_lang="es
+     out_lang="es"
      # Llama a la API de OpenAI para traducir el texto
        client = OpenAI(api_key=ke)  
        response = client.chat.completions.create(
