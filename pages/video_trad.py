@@ -171,23 +171,23 @@ if st.button("convertir con traductor"):
             st.write(f" {output_text}")
 
 
-    if st.button("Traducir con IA"):
+     if st.button("Traducir con IA"):
         
-    # f"Translate the following {in_lang} text to {out_lang}: {Texto}"    
-    # Llama a la API de OpenAI para traducir el texto
-      respuesta = openai.Completion.create(
-        engine="gpt4-o",
-        prompt=f"Traduce {st.session_state.t_txt}",
-        max_tokens=150,  # Ajusta este valor según tus necesidades
-        api_key=ke
-       )
+     # f"Translate the following {in_lang} text to {out_lang}: {Texto}"    
+     # Llama a la API de OpenAI para traducir el texto
+       respuesta = openai.Completion.create(
+         engine="gpt4-o",
+         prompt=f"Traduce {st.session_state.t_txt}",
+         max_tokens=150,  # Ajusta este valor según tus necesidades
+         api_key=ke
+        )
 
     # Obtiene la traducción del resultado
-      texto_traducido = respuesta.choices[0].text.strip()
+       texto_traducido = respuesta.choices[0].text.strip()
 
     # Muestra el texto traducido
-      st.subheader("Texto traducido:")
-      st.write(texto_traducido)
+       st.subheader("Texto traducido:")
+       st.write(texto_traducido)
     # Close the video and audio clips
     #    audio_clip.close()
     
