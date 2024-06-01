@@ -177,15 +177,25 @@ if st.button("Traducir con IA",key=3):
      # f"Translate the following {in_lang} text to {out_lang}: {Texto}"    
      # Llama a la API de OpenAI para traducir el texto
        client = OpenAI(api_key=ke)  
-       respuesta = client.Completion.create(
-         engine="gpt4-o",
-         prompt=f"Traduce {st.session_state.t_txt}",
-         max_tokens=150,  # Ajusta este valor según tus necesidades
-         api_key=ke
-        )
+       response = client.chat.completions.create(
+         model="gpt-4",
+         messages=[
+           {
+             "role": "system",
+             "content": f"You will be provided with a text in English, and your task is to translate it into Spanish."
+           },
+           {
+             "role": "user",
+             "content": st.session_state.t_txt
+           }
+         ],
+         temperature=0.7,
+         max_tokens=64,
+         top_p=1
+       )
 
     # Obtiene la traducción del resultado
-       texto_traducido = respuesta.choices[0].text.strip()
+       texto_traducido = response.choices[0].text.strip()
 
     # Muestra el texto traducido
        st.subheader("Texto traducido:")
