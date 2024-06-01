@@ -125,6 +125,7 @@ if st.button("Transcribir", type="primary"):
     video_to_transcript(video_file)
    
 display_output_text = st.checkbox("Mostrar el texto")
+
 if st.button("convertir con traductor"):
         
         #result, output_text = text_to_speech(input_language, output_language, text, tld)
@@ -171,7 +172,7 @@ if st.button("convertir con traductor"):
             st.write(f" {output_text}")
 
 
-     if st.button("Traducir con IA"):
+if st.button("Traducir con IA",key=3):
         
      # f"Translate the following {in_lang} text to {out_lang}: {Texto}"    
      # Llama a la API de OpenAI para traducir el texto
