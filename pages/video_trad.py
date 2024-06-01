@@ -192,12 +192,14 @@ if st.button("Traducir con IA",key=3):
        st.write(texto_traducido)
        if st.button("Audio traducido",key=4):
           client = OpenAI(api_key=ke)
-          speech_file_path = Path(__file__).parent / "speech.mp3"
+          #speech_file_path = Path(__file__).parent / "speech.mp3"
           response = client.audio.speech.create(
             model="tts-1",
             voice="alloy",
             input=texto_traducido
           )
+          response.stream_to_file("trad_text.mp3")
+          st.audio("trad_text.mp3", format="audio/mp3") 
     
     
     
