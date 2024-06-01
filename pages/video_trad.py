@@ -18,7 +18,7 @@ if 't_txt' not in st.session_state:
     st.session_state.t_txt = " "
 
 if 'txt_tr' not in st.session_state:
-    st.session_state.txtr_tr = " "
+    st.session_state.txt_tr = " "
 
 #def text_to_speech(input_language, output_language, text, tld):
 #        translation = translator.translate(text, src=input_language, dest=output_language)
@@ -191,7 +191,7 @@ if st.button("Traducir con IA",key=3):
          top_p=1
        )
        texto_traducido = response.choices[0].message.content
-       st.session_state.txtr_tr=texto_traducido
+       st.session_state.txt_tr=texto_traducido
        st.subheader("Texto traducido:")
        st.write(texto_traducido)
        if st.button("Audio traducido",key=4):
@@ -200,7 +200,7 @@ if st.button("Traducir con IA",key=3):
           response = client.audio.speech.create(
             model="tts-1",
             voice="alloy",
-            input=texto_traducido
+            input=st.session_state.txt_tr
           )
           response.stream_to_file("trad_text.mp3")
           st.audio("trad_text.mp3", format="audio/mp3") 
