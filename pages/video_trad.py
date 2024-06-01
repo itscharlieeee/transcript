@@ -182,7 +182,7 @@ if st.button("Traducir con IA",key=3):
            }
          ],
          temperature=0.7,
-         max_tokens=64,
+         max_tokens=200,
          top_p=1
        )
 
