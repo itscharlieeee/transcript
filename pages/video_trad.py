@@ -8,6 +8,8 @@ import os
 #from gtts import gTTS
 from translate import Translator
 import time
+from pathlib import Path
+
 
 mp3_file = "audio.mp3"
 #translator = Translator()
@@ -189,12 +191,12 @@ if st.button("Traducir con IA",key=3):
        st.subheader("Texto traducido:")
        st.write(texto_traducido)
        if st.button("Audio traducido",key=4):
-          client = OpenAI()
+          client = OpenAI(api_key=ke)
           speech_file_path = Path(__file__).parent / "speech.mp3"
           response = client.audio.speech.create(
             model="tts-1",
             voice="alloy",
-            input="Today is a wonderful day to build something people love!"
+            input=texto_traducido
           )
     
     
