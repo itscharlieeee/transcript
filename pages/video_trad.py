@@ -176,7 +176,7 @@ if st.button("Traducir con IA",key=3):
         
      # f"Translate the following {in_lang} text to {out_lang}: {Texto}"    
      # Llama a la API de OpenAI para traducir el texto
-       respuesta = openai.Completion.create(
+       respuesta = client.Completion.create(
          engine="gpt4-o",
          prompt=f"Traduce {st.session_state.t_txt}",
          max_tokens=150,  # Ajusta este valor según tus necesidades
