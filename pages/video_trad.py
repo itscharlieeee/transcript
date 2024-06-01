@@ -171,7 +171,8 @@ if st.button("convertir con traductor"):
 
 if st.button("Traducir con IA",key=3):
         
-     # f"Translate the following {in_lang} text to {out_lang}: {Texto}"    
+     in_lang= "en"   
+     out_lang="es
      # Llama a la API de OpenAI para traducir el texto
        client = OpenAI(api_key=ke)  
        response = client.chat.completions.create(
@@ -179,7 +180,7 @@ if st.button("Traducir con IA",key=3):
          messages=[
            {
              "role": "system",
-             "content": f"You will be provided with a text in English, and your task is to translate it into Spanish."
+             "content": f"You will be provided with a text in { in_lang }, and your task is to translate it into {out_lang}."
            },
            {
              "role": "user",
