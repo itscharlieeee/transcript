@@ -64,7 +64,7 @@ if st.button("Traducir en Audio",key=4):
   response = client.audio.speech.create(
     model="tts-1",
     voice="alloy",
-    input=st.session_state.txt_tr
+    input=st.session_state.txt_tr[:4094]
   )
   response.stream_to_file("trad_text.mp3")
   st.audio("trad_text.mp3", format="audio/mp3") 
