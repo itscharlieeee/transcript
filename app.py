@@ -50,7 +50,7 @@ if st.button("Traducir en texto",key=3):
            }
          ],
          temperature=0.7,
-         max_tokens=300,
+         max_tokens=900,
          top_p=1
        )
        texto_traducido = response.choices[0].message.content
@@ -68,5 +68,11 @@ if st.button("Traducir en Audio",key=4):
   )
   response.stream_to_file("trad_text.mp3")
   st.audio("trad_text.mp3", format="audio/mp3") 
+  st.download_button(
+    label="Download file",
+    data=mp3,
+    file_name="trad_text.mp3",
+    mime="text/csv",
+  )  
 
           
