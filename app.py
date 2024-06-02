@@ -5,7 +5,11 @@ import os
 import whisper
 from PIL import Image
 
+if 't_txt' not in st.session_state:
+    st.session_state.t_txt = " "
 
+if 'txt_tr' not in st.session_state:
+    st.session_state.txt_tr = " "
 
 
 st.title("Transcriptor de Audio")
@@ -28,7 +32,7 @@ if uploaded_file is not None:
        file=uploaded_file
     )
     st.write(transcription.text)
-
+    st.session_state.t_txt= transcription.text
 if st.button("Traducir con IA",key=3):
        in_lang= "English"   
        out_lang="Spanish"
@@ -53,6 +57,7 @@ if st.button("Traducir con IA",key=3):
        st.session_state.txt_tr=texto_traducido
        st.subheader("Texto traducido:")
        st.write(texto_traducido)
+       st.session_state.txt_tr= texto_traducido
 if st.button("Audio traducido",key=4):
   client = OpenAI(api_key=ke)
   #speech_file_path = Path(__file__).parent / "speech.mp3"
