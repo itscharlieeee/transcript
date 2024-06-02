@@ -3,9 +3,16 @@ from tempfile import NamedTemporaryFile
 from openai import OpenAI
 import os
 import whisper
+from PIL import image
+
+
 
 
 st.title("Transcriptor de Audio")
+image = Image.open('OIG3.jpg')
+st.image(image)
+
+
 ke = st.text_input('Ingresa tu Clave')
 os.environ['OPENAI_API_KEY'] = ke
 
