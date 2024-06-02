@@ -68,11 +68,6 @@ if st.button("Traducir en Audio",key=4):
   )
   response.stream_to_file("trad_text.mp3")
   st.audio("trad_text.mp3", format="audio/mp3") 
-  st.download_button(
-    label="Download file",
-    data=mp3,
-    file_name="trad_text.mp3",
-    mime="text/csv",
-  )  
+ 
 
           
