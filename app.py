@@ -3,7 +3,7 @@ from tempfile import NamedTemporaryFile
 from openai import OpenAI
 import os
 import whisper
-from PIL import image
+from PIL import Image
 
 
 
