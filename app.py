@@ -33,7 +33,7 @@ if uploaded_file is not None:
     )
     st.write(transcription.text)
     st.session_state.t_txt= transcription.text
-if st.button("Traducir con IA",key=3):
+if st.button("Traducir en texto",key=3):
        in_lang= "English"   
        out_lang="Spanish"
        client = OpenAI(api_key=ke)  
@@ -58,7 +58,7 @@ if st.button("Traducir con IA",key=3):
        st.subheader("Texto traducido:")
        st.write(texto_traducido)
        st.session_state.txt_tr= texto_traducido
-if st.button("Audio traducido",key=4):
+if st.button("Traducir en Audio",key=4):
   client = OpenAI(api_key=ke)
   #speech_file_path = Path(__file__).parent / "speech.mp3"
   response = client.audio.speech.create(
