@@ -10,7 +10,7 @@ from PIL import Image
 
 st.title("Transcriptor de Audio")
 image = Image.open('OIG3.jpg')
-st.image(image,width=300)
+st.image(image,width=350)
 
 
 ke = st.text_input('Ingresa tu Clave')
