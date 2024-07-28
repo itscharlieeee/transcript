@@ -60,9 +60,9 @@ def video_to_transcript(video_file):
         "Selecciona el lenguaje de salida",
         ("Inglés", "Español", "Bengali", "Coreano", "Mandarín", "Japonés"),
     )
-    if out_lang == "Inglés":
+    if out_lang == "Español":
         output_language = "en"
-    elif out_lang == "Español":
+    elif out_lang == "Inglés":
         output_language = "es"
     elif out_lang == "Bengali":
         output_language = "bn"
