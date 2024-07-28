@@ -147,7 +147,7 @@ if st.button("Traducir con IA",key=3):
        out_lang="Spanish"
        client = OpenAI(api_key=ke)  
        response = client.chat.completions.create(
-         model="gpt-4o",
+         model="gpt-4o-mini",
          messages=[
            {
              "role": "system",
