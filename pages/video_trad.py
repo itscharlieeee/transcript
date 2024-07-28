@@ -107,7 +107,7 @@ if st.button("Transcribir", type="primary"):
    
 display_output_text = st.checkbox("Mostrar el texto")
 
-if st.button("convertir con traductor"):
+if st.button("   "):
 
      translator = Translator(to_lang="es")
      input_text= st.session_state.t_txt
