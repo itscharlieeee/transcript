@@ -4,7 +4,7 @@ openai-whisper
 tiktoken
 ffmpeg
 pydub
-moviepy
+moviepy==1.0.3
 translate
 
 
